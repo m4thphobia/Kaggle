@@ -23,7 +23,9 @@ VAL_MASK_DIR ="../data/val_masks/"
 def train_fn(loader, model, optimizer, loss_fn, scaler):
     loop = tqdm(loader)
 
-    for batch_idx, (data, targets) in enumerate(loop):
+    for batch_idx, (data, targets) in enumerate(loop): #! BEAUTIFUL
+        
+        #! IMPORTANT
         data = data.to(DEVICE)
         targets = targets.float().unsqueeze(1).to(DEVICE)
 
