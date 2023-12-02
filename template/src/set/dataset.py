@@ -29,7 +29,7 @@ class CarvanaDataset(Dataset):
 
         return image, mask
 
-
+##############################################################################################
 
 
 from torch.utils.data import Dataset, TensorDataset
@@ -39,3 +39,13 @@ ys = np.random.rand(4, 1) # 正解データ
 
 Xs = torch.FloatTensor(Xs) # pytorchで扱える配列に変更
 ys = torch.FloatTensor(ys)
+
+dataset = TensorDataset(iXs, ys)
+
+train_load = DataLoader(dataset, batch_size=2, shuffle=False) # shuffle=Trueでデータシャッフル
+
+for x, t in train_load:
+    print(x)
+    print(t)
+
+##############################################################################################
